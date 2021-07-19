@@ -1,8 +1,42 @@
+:root {
+    --ff-space-mono: 'Space Mono', monospace;
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --dark-grayish-cyan-2: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --light-grayish-cyan-2: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    color: var(--dark-grayish-cyan);
+    font-family: var(--ff-space-mono);
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+}
+
 .attribution { 
-    font-size: 11px; 
+    font-size: 0.6875rem; 
     text-align: center; 
 }
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+    text-decoration: none;
 }
