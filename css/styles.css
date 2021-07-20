@@ -57,10 +57,13 @@ header {
 main {
     background-color: var(--white);
     border-radius: 1.4375rem 1.4375rem 0 0;
-    padding: 2rem;    
+    padding-top: 2rem;   
+    padding-bottom: 2rem; 
 }
 
 .input {
+    margin-left: 2rem;
+    margin-right: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -146,6 +149,7 @@ main {
     all: unset;
     background-color: var(--light-grayish-cyan-2);
     border: 2px solid transparent;
+    border-radius: 5px;
     box-sizing: border-box;
     color: var(--very-dark-cyan);
     padding: 0 1.125rem;
@@ -171,6 +175,48 @@ main {
 #input-people {
     background-image: url("../images/icon-person.svg");
     background-size: 0.8125rem 1rem;
+}
+
+.output {
+    background-color: var(--very-dark-cyan);
+    border-radius: 0.875rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding: 2.5rem 1.5rem 1.5rem;
+}
+
+.output__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1.4375rem;
+}
+
+.output__title__span {
+    color: var(--dark-grayish-cyan-2);
+    font-size: 0.875rem;
+}
+
+.output__amount {
+    color: var(--strong-cyan);
+    font-size: 1.875rem;
+}
+
+#button-reset {
+    all: unset;
+    background-color: hsl(183, 79%, 24%);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: rgba(0, 73, 77, 0.4);
+    font-size: 1.35rem;
+    margin-top: 0.6875rem;
+    padding: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 .attribution { 
