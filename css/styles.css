@@ -13,6 +13,7 @@
 
     --light-grayish-cyan-hover: hsl(173, 61%, 77%);
     --light-brown-checker: hsl(9, 42%, 61%);
+    --dark-cyan-default-reset: hsl(183, 79%, 24%);
 }
 
 html {
@@ -56,7 +57,7 @@ header {
 
 main {
     background-color: var(--white);
-    border-radius: 1.4375rem 1.4375rem 0 0;
+    border-radius: 1.4375rem;
     padding-top: 2rem;   
     padding-bottom: 2rem; 
 }
@@ -113,7 +114,7 @@ main {
 }
 
 #input-bill::placeholder,
-#input-tip-custom::placeholder {
+#input-people::placeholder {
     color: var(--dark-grayish-cyan-2);
 }
 
@@ -129,7 +130,7 @@ main {
     all: unset;
     background-color: var(--very-dark-cyan);
     border-radius: 5px;
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.88);
     padding: 0.375rem;
     text-align: center;
 }
@@ -155,6 +156,10 @@ main {
     padding: 0 1.125rem;
     text-align: right;
     width: 100%;
+}
+
+#input-tip-custom::placeholder {
+    color: var(--dark-grayish-cyan);
 }
 
 .input__people-title {
@@ -189,7 +194,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.88);
     font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 1.4375rem;
@@ -207,7 +212,7 @@ main {
 
 #button-reset {
     all: unset;
-    background-color: hsl(183, 79%, 24%);
+    background-color: var(--dark-cyan-default-reset);
     border-radius: 5px;
     box-sizing: border-box;
     color: rgba(0, 73, 77, 0.4);
@@ -219,6 +224,11 @@ main {
     width: 100%;
 }
 
+footer {
+    margin: 2rem 0 1rem;
+    opacity: 0.5;
+}
+
 .attribution { 
     font-size: 0.6875rem; 
     text-align: center; 
@@ -227,4 +237,8 @@ main {
 .attribution a { 
     color: hsl(228, 45%, 44%); 
     text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
 }
