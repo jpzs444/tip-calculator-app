@@ -25,10 +25,82 @@ html {
 }
 
 body {
+    background-color: var(--light-grayish-cyan);
     color: var(--dark-grayish-cyan);
     font-family: var(--ff-space-mono);
     font-size: 1.5rem;
     font-weight: var(--fw-bold);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+header {
+    min-height: 9rem;
+    padding: 2.25rem 0;
+}
+
+.title {
+    color: var(--dark-grayish-cyan);
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main {
+    background-color: var(--white);
+    border-radius: 1.4375rem 1.4375rem 0 0;
+    padding: 2rem;    
+}
+
+.input__label {
+    font-size: 1rem;
+}
+
+.input__bill {
+    background-color: var(--light-grayish-cyan-2);
+    border-radius: 3px;
+    height: 3rem;
+    margin-top: 0.375rem;
+    margin-bottom: 2rem;
+}
+
+.input__bill:focus {
+    background-color: white;
+}
+
+#input-bill {
+    background-color: var(--light-grayish-cyan-2);
+    background-image: url("../images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-size: 0.625rem 1rem;
+    background-position: 1.125rem;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    color: var(--very-dark-cyan);
+    font-family: var(--ff-space-mono);
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    height: 100%;
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 1.125rem;
+    text-align: right;
+}
+
+#input-bill:focus,
+#input-bill:hover {
+    border: 2px solid var(--strong-cyan);
+    border-radius: 3px;
+    outline: none;
+}
+
+#input-bill::placeholder {
+    color: var(--dark-grayish-cyan-2);
 }
 
 .attribution { 

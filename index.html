@@ -17,58 +17,53 @@
     <title>Frontend Mentor | Tip calculator app</title>
 </head>
 <body>
-    <header>
-        <p>Spli<br>tter</p>
-    </header>
-
-    <main>
-        <section class="input">
-            <p>Bill</p>
-            <div class="input__bill">
-                <img src="images/icon-dollar.svg" alt="dollar sign icon">
-                <input type="text" placeholder="0" id="input-bill">
+    <div class="splitter-challenge">
+        <header>
+            <h1 class="title">Spli<br>tter</h1>
+        </header>
+        <main>
+            <section class="input">
+                <p class="input__label">Bill</p>
+                <div class="input__bill">
+                    <input type="number" placeholder="0" id="input-bill">
+                </div>
+                <p class="input__label">Select Tip %</p>
+                <div class="input__tip">
+                    <button type="button" id="button-tip-5">5%</button>
+                    <button type="button" id="button-tip-10">10%</button>
+                    <button type="button" id="button-tip-15">15%</button>
+                    <button type="button" id="button-tip-25">25%</button>
+                    <button type="button" id="button-tip-50">50%</button>
+                    <input type="text" placeholder="Custom" id="input-tip-custom">
+                </div>
+                <div class="input__people-title">
+                    <p class="input__label">Number of People</p>
+                    <span>Can't be zero</span>
+                </div>
+                <div class="input__people">
+                    <img src="images/icon-person.svg" alt="person icon">
+                    <input type="number" placeholder="0" id="input-people">
+                </div>
+            </section>
+            <section class="output">
+                <div class="output__tip-amount">
+                    <p>Tip Amount<br>/ person</p>
+                    <p>&dollar;0.00</p>
+                </div>
+                <div class="output__total">
+                    <p>Total<br>/ person</p>
+                    <p>&dollar;0.00</p>
+                </div>
+                <button type="button" id="button-reset">Reset</button>
+            </section>
+        </main>
+        <!-- <footer>
+            <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+                Coded by <a href="#">Your Name Here</a>.
             </div>
-
-            <p>Select Tip %</p>
-            <div class="input__tip">
-                <button type="button" id="button-tip-5">5%</button>
-                <button type="button" id="button-tip-10">10%</button>
-                <button type="button" id="button-tip-15">15%</button>
-                <button type="button" id="button-tip-25">25%</button>
-                <button type="button" id="button-tip-50">50%</button>
-                <input type="text" placeholder="Custom" id="input-tip-custom">
-            </div>
-
-            <div class="input__people-title">
-                <p>Number of People</p>
-                <span>Can't be zero</span>
-            </div>
-            <div class="input__people">
-                <img src="images/icon-person.svg" alt="person icon">
-                <input type="text" placeholder="0" id="input-people">
-            </div>
-        </section>
-        <section class="output">
-            <div class="output__tip-amount">
-                <p>Tip Amount<br>/ person</p>
-                <p>&dollar;0.00</p>
-            </div>
-
-            <div class="output__total">
-                <p>Total<br>/ person</p>
-                <p>&dollar;0.00</p>
-            </div>
-
-            <button type="button" id="button-reset">Reset</button>
-        </section>
-    </main>
-
-    <!-- <footer>
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-            Coded by <a href="#">Your Name Here</a>.
-        </div>
-    </footer> -->
+        </footer> -->
+    </div>
 
     <script src="index.js"></script>
 </body>
