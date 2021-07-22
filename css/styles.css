@@ -285,7 +285,12 @@ footer {
     }
 
     .splitter-challenge > * {
-        max-width: 520px;
+        max-width: 32.5rem;
+    }
+
+    .input__tip {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0.875rem;
     }
 }
 
@@ -299,39 +304,37 @@ footer {
 
 @media only screen and (min-width: 62em) {    
     .splitter-challenge > * {
-        max-width: 920px;
+        max-width: 57.5rem;
     }
 
     header {
         min-height: unset;
-        padding: 0 0 78px;
+        padding: 0 0 4.875rem;
     }
 
     main {
         display: grid;
         grid-template-columns: 1fr 1.09fr;
-        gap: 48px;
-        padding-left: 48px;
-        padding-right: 32px;
+        gap: 3rem;
+        padding-left: 3rem;
+        padding-right: 2rem;
     }
 
     .input {
-        margin: 13px 0 16px;
+        margin: 0.8125rem 0 1rem;
     }
 
     .input__bill {
-        margin-bottom: 45.5px;
-        margin-top: 8px;
+        margin-bottom: 2.84375rem;
+        margin-top: 0.5rem;
     }
 
     .input__tip {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 14px;
-        margin-bottom: 45.5px;
+        margin-bottom: 2.84375rem;
     }
 
     #input-tip-custom {
-        padding: 0 15px;;
+        padding: 0 0.9375rem;
     }
 
     #input-tip-custom::placeholder {
@@ -340,7 +343,7 @@ footer {
     }
 
     .input__people {
-        margin-top: 8px;
+        margin-top: 0.5rem;
     }
 
     .output {
@@ -348,19 +351,19 @@ footer {
         flex-direction: column;
         justify-content: space-between;
         margin: unset;
-        padding: 45px 40px 40px;
+        padding: 2.8125rem 2.5rem 2.5rem;
     }
 
     .output__info {
-        margin-bottom: 102px;
+        margin-bottom: 6.375rem;
     }
 
     .output__title {
-        margin-bottom: 28px;
+        margin-bottom: 1.75rem;
     }
 
     .output__amount {
-        font-size: 45px;
+        font-size: 2.8125rem;
     }
 
     #button-reset {
