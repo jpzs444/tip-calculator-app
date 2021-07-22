@@ -46,6 +46,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+/* Header Styles */
+
 header {
     min-height: 9rem;
     padding: 2.25rem 0;
@@ -60,12 +62,16 @@ header {
     text-transform: uppercase;
 }
 
+/* Main Styles */
+
 main {
     background-color: var(--white);
     border-radius: 1.4375rem;
     padding-top: 2rem;   
     padding-bottom: 2rem; 
 }
+
+/* Main (Input Section) Styles */
 
 .input {
     margin-left: 2rem;
@@ -187,6 +193,8 @@ main {
     background-size: 0.8125rem 1rem;
 }
 
+/* Main (Output Section) Styles */
+
 .output {
     background-color: var(--very-dark-cyan);
     border-radius: 0.875rem;
@@ -229,6 +237,8 @@ main {
     width: 100%;
 }
 
+/* Footer Styles */
+
 footer {
     line-height: 1.2;
     margin: 2rem 0 1rem;
@@ -251,20 +261,22 @@ footer {
     text-decoration: underline;
 }
 
-@media only screen and (max-width: 336px) {
+/* Media Queries */
+
+@media only screen and (max-width: 21em) {
     #input-tip-custom::placeholder {
         font-size: 1.25rem;
         text-align: center;
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 21.875em) {
     footer {
         padding: 0 3.577rem;
     }
 }
 
-@media only screen and (min-width: 520px) {
+@media only screen and (min-width: 32.5em) {
     .splitter-challenge {
         display: flex;
         flex-direction: column;
@@ -277,7 +289,7 @@ footer {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48em) {
     .input__tip__button:hover {
         background-color: var(--light-grayish-cyan-hover);
         color: var(--very-dark-cyan);
@@ -285,7 +297,7 @@ footer {
     }
 }
 
-@media only screen and (min-width: 992px) {    
+@media only screen and (min-width: 62em) {    
     .splitter-challenge > * {
         max-width: 920px;
     }
