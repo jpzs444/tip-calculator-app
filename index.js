@@ -3,33 +3,43 @@ const outputTotal = document.getElementById("output-total");
 
 const inputBill = document.getElementById("input-bill");
 
-const buttonTip5 = document.getElementById("button-tip-5");
-const buttonTip10 = document.getElementById("button-tip-10");
-const buttonTip15 = document.getElementById("button-tip-15");
-const buttonTip25 = document.getElementById("button-tip-25");
-const buttonTip50 = document.getElementById("button-tip-50");
+// const buttonTip5 = document.getElementById("button-tip-5");
+// const buttonTip10 = document.getElementById("button-tip-10");
+// const buttonTip15 = document.getElementById("button-tip-15");
+// const buttonTip25 = document.getElementById("button-tip-25");
+// const buttonTip50 = document.getElementById("button-tip-50");
+
+const inputTipButtons = document.querySelectorAll("input__tip__button");
+
 const inputTipCustom = document.getElementById("input-tip-custom");
 
 const inputPeople = document.getElementById("input-people");
 
 let isButtonClicked = false;
 
+let tipPercentage = 0;
+let tipResult = 0;
 
-inputTipCustom.addEventListener("input", getTipPerPerson);
+inputTipCustom.addEventListener("input", function() {
+    getTipPerPerson();
+    getTotalPerPerson();
+});
 
 function getTipPerPerson() {
     let tipPerPerson = parseFloat(inputBill.value) * (parseFloat(inputTipCustom.value) / 100) / parseFloat(inputPeople.value);
-    let convertedTip = convertToUsd(tipPerPerson);
-    showTipPerPerson(convertedTip);
+    showTipPerPerson(tipPerPerson);
+    tipResult = tipPerPerson;
 }
 
-function convertToUsd(number) {
-    return number.toLocaleString("en-us", {
-        maximumFractionDigits: 2,
-        minimumFractionDigits: 2
-    })
+function getTotalPerPerson() {
+    let totalPerPerson = (parseFloat(inputBill.value) / parseFloat(inputPeople.value)) + tipResult;
+    showTotalPerPerson(totalPerPerson);
 }
 
 function showTipPerPerson(tip) {
-    outputTipAmount.textContent = "$" + tip;
+    outputTipAmount.textContent = "$" + tip.toFixed(2);
+}
+
+function showTotalPerPerson(total) {
+    outputTotal.textContent = "$" + total.toFixed(2);
 }
