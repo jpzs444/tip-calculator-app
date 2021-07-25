@@ -8,6 +8,8 @@ const inputPeople = document.getElementById("input-people");
 const outputTipAmount = document.getElementById("output-tip-amount");
 const outputTotal = document.getElementById("output-total");
 
+const buttonReset = document.getElementById("button-reset");
+
 let isButtonClicked = false;
 
 let tipPercentage = 0;
@@ -38,6 +40,8 @@ inputPeople.addEventListener("input", function() {
     getTotalPerPerson();
 })
 
+buttonReset.addEventListener("click", resetTipCalculator);
+
 function getTipPerPerson() {
     let tipPerPerson = parseFloat(inputBill.value) * tipPercentage / parseFloat(inputPeople.value);
     showTipPerPerson(tipPerPerson); 
@@ -55,4 +59,13 @@ function showTipPerPerson(tip) {
 
 function showTotalPerPerson(total) {
     outputTotal.textContent = "$" + total.toFixed(2);
+}
+
+function resetTipCalculator() {
+    let defaultTipAndTotalPerPerson = "$0.00";
+    inputBill.value = "";
+    inputTipCustom.value = "";
+    inputPeople.value = "";
+    outputTipAmount.textContent = defaultTipAndTotalPerPerson;
+    outputTotal.textContent = defaultTipAndTotalPerPerson;
 }
