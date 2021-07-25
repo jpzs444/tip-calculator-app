@@ -1,33 +1,28 @@
-const inputBill = document.getElementById("input-bill");
+// Declaration 
 
+const inputBill = document.getElementById("input-bill");
 const inputTipButtons = document.querySelectorAll(".input__tip__button");
 const inputTipCustom = document.getElementById("input-tip-custom");
-
 const inputChecker = document.querySelector(".input__checker");
 const inputPeople = document.getElementById("input-people");
-
 const outputTipAmount = document.getElementById("output-tip-amount");
 const outputTotal = document.getElementById("output-total");
-
 const buttonReset = document.getElementById("button-reset");
 
-buttonReset.disabled = true; 
+// Initialization
 
+buttonReset.disabled = true; 
 let tipPercentage = 0;
 let tipCalculated = 0;
 
-inputBill.addEventListener("input", function() {
-    checkNumberOfPeople();
-    getTipPerPerson();
-    getTotalPerPerson();
-})
+// Add Event Listener
+
+inputBill.addEventListener("input", calculate);
 
 for (let i = 0; i < inputTipButtons.length; i++) {
     inputTipButtons[i].addEventListener("click", function() {
         tipPercentage = parseFloat(inputTipButtons[i].textContent) / 100; 
-        checkNumberOfPeople();
-        getTipPerPerson();
-        getTotalPerPerson();
+        calculate();
         removeInputTipButtonActive();
         inputTipButtons[i].classList.add("input__tip__button--active");
         inputTipCustom.value = "";
@@ -35,20 +30,25 @@ for (let i = 0; i < inputTipButtons.length; i++) {
 }
 
 inputTipCustom.addEventListener("input", function() {
-    tipPercentage = parseFloat(inputTipCustom.value) / 100;
-    checkNumberOfPeople();
-    getTipPerPerson();
-    getTotalPerPerson();
+    if (inputTipCustom.value == "") {
+        tipPercentage = 0;
+    } else {
+        tipPercentage = parseFloat(inputTipCustom.value) / 100;
+    }
+    calculate();
     removeInputTipButtonActive();
 });
 
-inputPeople.addEventListener("input", function() {
+inputPeople.addEventListener("input", calculate); 
+buttonReset.addEventListener("click", resetTipCalculator);
+
+// Functions
+
+function calculate() {
     checkNumberOfPeople();
     getTipPerPerson();
     getTotalPerPerson();
-}) 
-
-buttonReset.addEventListener("click", resetTipCalculator);
+}
 
 function checkNumberOfPeople() {
     if (inputPeople.value === 0 || inputPeople.value === "") {
@@ -64,28 +64,20 @@ function checkNumberOfPeople() {
 
 function getTipPerPerson() {
     let tipPerPerson = parseFloat(inputBill.value) * tipPercentage / parseFloat(inputPeople.value);
-    showTipPerPerson(tipPerPerson); 
+    showResults(outputTipAmount, tipPerPerson); 
     tipCalculated = tipPerPerson;
 }
 
 function getTotalPerPerson() {
     let totalPerPerson = (parseFloat(inputBill.value) / parseFloat(inputPeople.value)) + tipCalculated;
-    showTotalPerPerson(totalPerPerson);
+    showResults(outputTotal, totalPerPerson);
 }
 
-function showTipPerPerson(tip) {
-    if (isNaN(tip)) {
-        outputTipAmount.textContent = "$0.00";
+function showResults(outputDOM, result) {
+    if (isNaN(result)) {
+        outputDOM.textContent = "$0.00";
     } else {
-        outputTipAmount.textContent = "$" + tip.toFixed(2);
-    }
-}
-
-function showTotalPerPerson(total) {
-    if (isNaN(total)) {
-        outputTotal.textContent = "$0.00";
-    } else {
-        outputTotal.textContent = "$" + total.toFixed(2);
+        outputDOM.textContent = "$" + result.toFixed(2);
     }
 }
 
@@ -100,15 +92,16 @@ function disableButtonReset() {
 }
 
 function resetTipCalculator() {
-    let defaultTipAndTotalPerPerson = "$0.00";
     inputBill.value = "";
     removeInputTipButtonActive();
     inputTipCustom.value = "";
     inputPeople.value = "";
-    outputTipAmount.textContent = defaultTipAndTotalPerPerson;
-    outputTotal.textContent = defaultTipAndTotalPerPerson;
+    outputTipAmount.textContent = "$0.00";
+    outputTotal.textContent = "$0.00";
     disableButtonReset();
     buttonReset.disabled = true;
+    tipPercentage = 0;
+    tipCalculated = 0;
 }
 
 function removeInputTipButtonActive() {
