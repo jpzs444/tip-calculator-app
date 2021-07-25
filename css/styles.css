@@ -29,6 +29,24 @@ html {
     box-sizing: inherit;
 }
 
+::selection {
+    background-color: var(--light-grayish-cyan);
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--light-grayish-cyan);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
 body {
     background-color: var(--light-grayish-cyan);
     color: var(--dark-grayish-cyan);
@@ -209,6 +227,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    column-gap: 2rem;
     color: rgba(255, 255, 255, 0.88);
     font-size: 1rem;
     line-height: 1.4;
@@ -223,6 +242,10 @@ main {
 .output__amount {
     color: var(--strong-cyan);
     font-size: 1.875rem;
+    max-width: 10.9375rem;
+    overflow: auto;
+    overflow-y: hidden;
+    text-align: right;
 }
 
 #button-reset {
@@ -276,6 +299,16 @@ footer {
     footer {
         padding: 0 3.577rem;
     }
+
+    .output__amount {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 25.625em) {
+    .output__amount {
+        max-width: 18.4375rem;
+    }
 }
 
 @media only screen and (min-width: 32.5em) {
@@ -293,6 +326,10 @@ footer {
     .input__tip {
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 0.875rem;
+    }
+
+    .output__amount {
+        max-width: 18.4375rem;
     }
 }
 
@@ -366,6 +403,7 @@ footer {
 
     .output__amount {
         font-size: 2.8125rem;
+        max-width: 12.5rem;
     }
 
     #button-reset {
