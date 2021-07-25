@@ -11,12 +11,17 @@ const outputTotal = document.getElementById("output-total");
 let isButtonClicked = false;
 
 let tipPercentage = 0;
-let tipResult = 0;
+let tipCalculated = 0;
+
+inputBill.addEventListener("input", function() {
+    getTipPerPerson()
+    getTotalPerPerson();
+})
 
 for (let i = 0; i < inputTipButtons.length; i++) {
     inputTipButtons[i].addEventListener("click", function() {
         tipPercentage = parseFloat(inputTipButtons[i].textContent) / 100; 
-        getTipPerPerson(tipPercentage);
+        getTipPerPerson();
         getTotalPerPerson();
         inputTipCustom.value = "";
     });
@@ -24,18 +29,23 @@ for (let i = 0; i < inputTipButtons.length; i++) {
 
 inputTipCustom.addEventListener("input", function() {
     tipPercentage = parseFloat(inputTipCustom.value) / 100;
-    getTipPerPerson(tipPercentage);
+    getTipPerPerson();
     getTotalPerPerson();
 });
 
-function getTipPerPerson(tipPercentage) {
+inputPeople.addEventListener("input", function() {
+    getTipPerPerson();
+    getTotalPerPerson();
+})
+
+function getTipPerPerson() {
     let tipPerPerson = parseFloat(inputBill.value) * tipPercentage / parseFloat(inputPeople.value);
     showTipPerPerson(tipPerPerson); 
-    tipResult = tipPerPerson;
+    tipCalculated = tipPerPerson;
 }
 
 function getTotalPerPerson() {
-    let totalPerPerson = (parseFloat(inputBill.value) / parseFloat(inputPeople.value)) + tipResult;
+    let totalPerPerson = (parseFloat(inputBill.value) / parseFloat(inputPeople.value)) + tipCalculated;
     showTotalPerPerson(totalPerPerson);
 }
 
