@@ -102,10 +102,12 @@ function disableButtonReset() {
 function resetTipCalculator() {
     let defaultTipAndTotalPerPerson = "$0.00";
     inputBill.value = "";
+    removeInputTipButtonActive();
     inputTipCustom.value = "";
     inputPeople.value = "";
     outputTipAmount.textContent = defaultTipAndTotalPerPerson;
     outputTotal.textContent = defaultTipAndTotalPerPerson;
+    disableButtonReset();
     buttonReset.disabled = true;
 }
 
