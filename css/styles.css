@@ -175,7 +175,8 @@ main {
     text-align: center;
 }
 
-.input__tip__button:focus {
+.input__tip__button:focus,
+.input__tip__button--active {
     background-color: var(--strong-cyan);
     color: var(--very-dark-cyan);
 }

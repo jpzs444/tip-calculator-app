@@ -28,6 +28,8 @@ for (let i = 0; i < inputTipButtons.length; i++) {
         checkNumberOfPeople();
         getTipPerPerson();
         getTotalPerPerson();
+        removeInputTipButtonActive();
+        inputTipButtons[i].classList.add("input__tip__button--active");
         inputTipCustom.value = "";
     });
 }
@@ -37,6 +39,7 @@ inputTipCustom.addEventListener("input", function() {
     checkNumberOfPeople();
     getTipPerPerson();
     getTotalPerPerson();
+    removeInputTipButtonActive();
 });
 
 inputPeople.addEventListener("input", function() {
@@ -104,4 +107,10 @@ function resetTipCalculator() {
     outputTipAmount.textContent = defaultTipAndTotalPerPerson;
     outputTotal.textContent = defaultTipAndTotalPerPerson;
     buttonReset.disabled = true;
+}
+
+function removeInputTipButtonActive() {
+    for (let i = 0; i < inputTipButtons.length; i++) {
+        inputTipButtons[i].classList.remove("input__tip__button--active");
+    }
 }
