@@ -115,12 +115,13 @@ main {
 }
 
 #input-bill,
-#input-people {
+.input-people--no-error,
+.input-people--error {
     background-color: var(--light-grayish-cyan-2);
     background-repeat: no-repeat;
     background-position: 1.125rem;
     border: 2px solid transparent;
-    border-radius: 3px;
+    border-radius: 5px;
     color: var(--very-dark-cyan);
     font-family: var(--ff-space-mono);
     font-size: 1.5rem;
@@ -141,8 +142,10 @@ main {
 #input-bill:hover,
 #input-tip-custom:focus,
 #input-tip-custom:hover,
-#input-people:focus,
-#input-people:hover {
+.input-people--no-error:focus,
+.input-people--no-error:hover,
+.input-people--error:focus,
+.input-people--error:hover {
     border: 2px solid var(--strong-cyan);
     border-radius: 5px;
     outline: none;
@@ -150,7 +153,8 @@ main {
 }
 
 #input-bill::placeholder,
-#input-people::placeholder {
+.input-people--no-error::placeholder,
+.input-people--error::placeholder {
     color: var(--dark-grayish-cyan-2);
 }
 
@@ -208,9 +212,16 @@ main {
     margin-top: 0.375rem;
 }
 
-#input-people {
+.input-people--no-error,
+.input-people--error {
     background-image: url("../images/icon-person.svg");
     background-size: 0.8125rem 1rem;
+}
+
+.input-people--error,
+.input-people--error:hover,
+.input-people--error:focus {
+    border-color: var(--light-brown-checker);
 }
 
 /* Main (Output Section) Styles */
