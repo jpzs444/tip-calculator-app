@@ -96,12 +96,12 @@ function resetTipCalculator() {
     removeInputTipButtonActive();
     inputTipCustom.value = "";
     inputPeople.value = "";
+    tipPercentage = 0;
+    tipCalculated = 0;
     outputTipAmount.textContent = "$0.00";
     outputTotal.textContent = "$0.00";
     disableButtonReset();
     buttonReset.disabled = true;
-    tipPercentage = 0;
-    tipCalculated = 0;
 }
 
 function removeInputTipButtonActive() {
